@@ -4,6 +4,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 const postsRouter = require('./routers/posts');
 
+app.use(express.static('public/images'));
+
 app.use('/posts', postsRouter);
 
 
