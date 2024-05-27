@@ -17,7 +17,7 @@ const index = (req, res) => {
                     html += `</ul>
                     </article> `;
                 });
-                html += '</main> <style>body{background-color: black; color: white;} p{font-size: 20px;}</style> ';
+                html += '</main> <style>body{background-color: black; color: white;} p{font-size: 20px;}a{text-decoration: none; color: white;}</style> ';
                 res.send(html);
 };
 
@@ -26,8 +26,8 @@ const show = (req, res) => {
   if (post) {
     const postWithUrls = {
       ...post,
-      image_url: `http://localhost:3000/${post.image}`,
-      image_download_url: `http://localhost:3000/posts/${post.slug}/download`
+      image_url: `http://${req.headers.host}/${post.image}`,
+      image_download_url: `http://${req.headers.host}/posts/${post.slug}/download`
     };
     res.json(postWithUrls);
   } else {
