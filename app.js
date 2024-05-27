@@ -6,6 +6,10 @@ const postsRouter = require('./routers/posts');
 
 app.use(express.static('public/images'));
 
+app.get('/', (req, res) => {
+    res.send('<h1>Benvenuto nel mio blog!</h1><h1>I miei <a href="http://localhost:3000/posts">Post</a></h1><style>body{background-color: black; color: white;} a{text-decoration: none; color: white;}</style>');
+});
+
 app.use('/posts', postsRouter);
 
 
