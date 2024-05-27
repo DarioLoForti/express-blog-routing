@@ -1,5 +1,5 @@
 const path = require('path');
-const posts = require('../posts');
+const posts = require('../db.js');
 
 const index = (req, res) => {
   let html = '<main>';
